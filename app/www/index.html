@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Navigation</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <script src="./nativescript-webview-interface.js"></script>
+
+</head>
+
+<body>
+    <div id="headline"></div>
+    <script>
+
+        nsWebViewInterface.on("nsWebViewInterfaceWrite", function (payload) {
+            dateParagraph.innerText = new Date().toDateString();
+            document.body.appendChild(dateParagraph);
+        });
+
+
+        function init() {
+            var dateParagraph = document.createElement("p");
+            dateParagraph.innerText = new Date().toDateString();
+            document.body.appendChild(dateParagraph);
+        }
+    </script>
+</body>
+
+</html>
