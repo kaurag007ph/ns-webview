@@ -13,6 +13,7 @@
 <body>
     <div id="headline"></div>
     <script>
+    nsWebViewInterface.emit("nsWebViewInterfaceTest", { message: "works" });
 
         nsWebViewInterface.on("nsWebViewInterfaceWrite", function (payload) {
             dateParagraph.innerText = new Date().toDateString();
@@ -20,11 +21,11 @@
         });
 
 
-        function init() {
-            var dateParagraph = document.createElement("p");
-            dateParagraph.innerText = new Date().toDateString();
-            document.body.appendChild(dateParagraph);
-        }
+        // function init() {
+        //     var dateParagraph = document.createElement("p");
+        //     dateParagraph.innerText = new Date().toDateString();
+        //     document.body.appendChild(dateParagraph);
+        // }
     </script>
 </body>
 
